@@ -1,0 +1,130 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font: 13px Helvetica, Arial;
+}
+
+#search {
+  #search-form {
+    position: fixed;
+    bottom: 0;
+    width: 80vw;
+
+    input {
+      background: #eee;
+      border: 0;
+      padding: 20px;
+      width: 100%;
+      margin-right: 0.5%;
+      border-top: 1px solid #dcdcdc;
+    }
+  }
+
+  #search-results {
+    display: none;
+    position: absolute;
+    bottom: 65px;
+    width: 80vw;
+    border-top: 1px solid #dcdcdc;
+    background: #eee;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 10px;
+
+    ul {
+      list-style: none;
+      margin: 0;
+
+      li {
+        display: inline-block;
+        cursor: pointer;
+        width: 200px;
+        margin-right: 6px;
+
+        img {
+          width: 100%;
+        }
+
+        p {
+          margin: 0;
+          text-align: center;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
+    }
+  }
+}
+
+#videolist {
+  padding: 20px 20px 60px;
+
+  > .connected,
+  > .disconnected {
+    border-left: 5px solid transparent;
+    color: #949494;
+    margin-top: 5px;
+    padding-left: 10px;
+  }
+
+  > .video {
+    > iframe {
+      border: 0 solid currentColor;
+      border-left-width: 10px;
+      color: inherit;
+    }
+
+    &.is-me {
+      text-align: right;
+
+      iframe {
+        border-left-width: 0;
+        border-right-width: 10px;
+      }
+    }
+  }
+}
+
+#chatarea {
+  height: calc(100vh - 65px);
+  overflow-y: scroll;
+  width: 80vw;
+}
+
+#sidebar {
+  background: #eee;
+  width: 20vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-left: 1px solid #dcdcdc;
+
+  > h2 {
+    font-size: 1.3em;
+    padding: 20px 20px 10px;
+  }
+
+  > ul {
+    list-style: none;
+    padding: 0;
+
+    > li {
+      cursor: pointer;
+      width: 80%;
+      margin: 10px auto;
+      border-radius: 15px;
+      background: currentColor;
+      border: 3px solid currentColor;
+      height: 20px;
+
+      &.faded {
+        opacity: 0.5;
+      }
+    }
+  }
+}
